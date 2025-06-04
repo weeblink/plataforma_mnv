@@ -121,7 +121,7 @@ class User extends Authenticatable
 
         if( !$external )
             Auth::login($user);
-        
+
         return $user->createToken('token', ['is-student'])->plainTextToken;
     }
 
@@ -142,7 +142,7 @@ class User extends Authenticatable
 
         $details = array(
             'mail'          => $email,
-            'subject'       => "Cristian Seller - Recuperação de senha",
+            'subject'       => "Marketplace na Veia - Recuperação de senha",
             'message'       => "Olá! \n\nAlguém está acessando sua conta e deseja redefinir a senha da sua conta. Para criar uma nova senha para a sua conta basta clicar no botão abaixo para alterar. \n\nCaso não tenha sido você, por favor entre em contato com a equipe de suporte da plataforma",
             'viewName'      => 'mail.recovery-password',
             'username'      => "Usuário",
@@ -226,9 +226,9 @@ class User extends Authenticatable
         return self::join("users_infos", "users_infos.user_id", "=", "users.id")
         ->where('users_infos.user_type', "STUDENT")
         ->select([
-            "users_infos.phone", 
-            "users_infos.user_type", 
-            "users.name", 
+            "users_infos.phone",
+            "users_infos.user_type",
+            "users.name",
             "users.email",
             "users.id",
             "users.created_at"
@@ -246,7 +246,7 @@ class User extends Authenticatable
                 'email'       => $user->email,
                 'created_at'  => $user->created_at,
                 'tags'        => $tags->map(function($tag) {
-                    
+
                     $title = '';
                     $type = '';
                     switch($tag->type_product){

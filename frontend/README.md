@@ -1,4 +1,4 @@
-# Cristian Seller Front-end
+# Marketplace na Veia Front-end
 
 ## 🎨 Paleta de cores
 
