@@ -120,7 +120,7 @@ export function CreateMentoringModal({ onCreate, open, setOpen }: Props) {
     }
 
     setOpen(value)
-  }interval
+  }
 
   function handleAddSchedules() {
     if (title.trim() === '') {
